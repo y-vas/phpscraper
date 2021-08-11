@@ -16,11 +16,11 @@
       <td>Count</td>
     </thead>
     <tbody>
-      <?php foreach ($results as $key => $value): ?>
+      <?php foreach ($results as $url => $count): ?>
 
         <tr>
-          <td><?=$key?></td>
-          <td><?=$value?></td>
+          <td><?=$url?></td>
+          <td><?=$count?></td>
         </tr>
 
       <?php endforeach; ?>

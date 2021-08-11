@@ -7,13 +7,15 @@ use Mark\App;
 
 $api = new App('http://0.0.0.0:3000' );
 
+
 $api->any('/', function ( $request ){
   return file_get_contents('Src/search.php');
 });
 
+
 $api->get('/search', function( $request ) {
 
-  $question = $request->get()['q'] ?? null;
+  $question = $request->get()['q']     ?? '';
   $start    = $request->get()['pages'] ?? null;
 
   $results = Scrapper::search( $question , $start );

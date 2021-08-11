@@ -13,7 +13,7 @@ $api->any('/', function ( $request ){
 
 $api->get('/search', function( $request ) {
 
-  $question = $request->get()['q'] ?? null;
+  $question = $request->get()['q']     ?? '';
   $start    = $request->get()['pages'] ?? null;
 
   $results = Scrapper::search( $question , $start );
